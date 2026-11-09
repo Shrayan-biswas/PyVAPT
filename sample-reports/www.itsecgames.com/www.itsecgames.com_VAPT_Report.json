@@ -1,0 +1,37 @@
+{
+  "report_name": "www.itsecgames.com_VAPT_Report",
+  "target": "https://www.itsecgames.com/",
+  "slug": "www.itsecgames.com",
+  "generated": "2026-11-09 06:28:14Z",
+  "generated_by": "Automated Website VAPT Framework v1.0.0 by Shrayan Biswas (https://www.linkedin.com/in/shrayan-biswas-a1259225a/)",
+  "summary": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 1,
+    "Low": 0,
+    "Informational": 0
+  },
+  "total_findings": 1,
+  "scans": [],
+  "findings": [
+    {
+      "id": "f8e1eaf4",
+      "run_id": "441aa346",
+      "target": "https://www.itsecgames.com/",
+      "title": "Missing Content-Security-Policy header",
+      "phase": "Phase 3",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "score": 4.2,
+      "severity": "Medium",
+      "component": "/",
+      "description": "No CSP is sent, which reduces defence-in-depth against XSS and data injection.",
+      "impact": "Weakens browser-side protections.",
+      "recommendation": "Add: Content-Security-Policy: default-src 'self'; frame-ancestors 'self'  (tune for the app)",
+      "evidence": "Header 'content-security-policy' absent from response.",
+      "status": "Open",
+      "notes": "",
+      "found": "2026-11-09 05:08:30Z",
+      "last_seen": "2026-11-09 05:57:35Z"
+    }
+  ]
+}

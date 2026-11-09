@@ -12,3 +12,4 @@
 - Black and white (grayscale) UI and print-friendly grayscale reports.
 - Animated monochrome interface (rotating rings that speed up during a scan, hairline layout, invert toggle, reduced-motion support).
 - Credit and MIT license in the app header, footer, reports, JSON output and source.
+- Added example reports (HTML, PDF, JSON) and screenshots to the repository.

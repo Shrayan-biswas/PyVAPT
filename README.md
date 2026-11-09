@@ -41,6 +41,30 @@ cd Automated-Website-VAPT-Framework
 Without the setup script you only need `python3-flask` (or `pip install -r requirements.txt`) and `python3 vapt_app.py`.
 PDF export needs `wkhtmltopdf`; without it you still get HTML and JSON.
 
+## In action
+
+| Scan in progress | Reports tab |
+|---|---|
+| ![scan](docs/screenshots/scan-in-progress.png) | ![reports](docs/screenshots/reports-tab.png) |
+
+## Example reports
+
+Real output of this tool, generated on 2026-11-09 against public security-training targets with the
+non-intrusive modules only. The `sample-reports/` folder holds one folder per target, each with the
+HTML, PDF and JSON report:
+
+| Report | Findings (C/H/M/L/I) | Target | Files |
+|---|---|---|---|
+| `google-gruyere.appspot.com_VAPT_Report` | 0 / 0 / 2 / 3 / 2 | Google's deliberately vulnerable training app | [HTML](sample-reports/google-gruyere.appspot.com/google-gruyere.appspot.com_VAPT_Report.html) · [PDF](sample-reports/google-gruyere.appspot.com/google-gruyere.appspot.com_VAPT_Report.pdf) · [JSON](sample-reports/google-gruyere.appspot.com/google-gruyere.appspot.com_VAPT_Report.json) |
+| `www.hackthissite.org_VAPT_Report` | 0 / 0 / 1 / 3 / 4 | public security-training site | [HTML](sample-reports/www.hackthissite.org/www.hackthissite.org_VAPT_Report.html) · [PDF](sample-reports/www.hackthissite.org/www.hackthissite.org_VAPT_Report.pdf) · [JSON](sample-reports/www.hackthissite.org/www.hackthissite.org_VAPT_Report.json) |
+| `www.itsecgames.com_VAPT_Report` | 0 / 0 / 1 / 0 / 0 | public security-training project site | [HTML](sample-reports/www.itsecgames.com/www.itsecgames.com_VAPT_Report.html) · [PDF](sample-reports/www.itsecgames.com/www.itsecgames.com_VAPT_Report.pdf) · [JSON](sample-reports/www.itsecgames.com/www.itsecgames.com_VAPT_Report.json) |
+| `redacted-site.example_VAPT_Report` | 0 / 1 / 3 / 1 / 4 | third-party site, name redacted | [HTML](sample-reports/redacted-site.example/redacted-site.example_VAPT_Report.html) · [PDF](sample-reports/redacted-site.example/redacted-site.example_VAPT_Report.pdf) · [JSON](sample-reports/redacted-site.example/redacted-site.example_VAPT_Report.json) |
+
+These are automated indicators (mostly missing security headers and cookie flags), not confirmed vulnerabilities.
+The fourth report is from a site that is not part of a training project, so its name was replaced with
+`redacted-site.example` before publishing. Do not publish findings about systems you do not own without the
+owner's permission.
+
 ## Usage
 
 1. Open the app, enter a target URL (or click a lab preset) and choose an intensity profile:
@@ -88,6 +112,7 @@ per-target storage and report generation).
 ```
 vapt_app.py               the whole application (Flask backend + UI)
 scripts/                  setup_kali.sh, labs.sh, run.sh
+sample-reports/           example HTML / PDF / JSON reports, one folder per target
 tests/test_core.py        offline unit tests
 docs/VAPT_TRAINING_PLAN.md  the 12-phase training plan this tool automates
 .github/workflows/ci.yml  compile + test on every push
