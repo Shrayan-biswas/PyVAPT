@@ -1,0 +1,2 @@
+# On Kali/Debian prefer APT (no pip needed):  sudo apt install -y python3-flask
+flask>=2.3

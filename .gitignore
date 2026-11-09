@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.idea/
+.vscode/
+# runtime output if you point VAPT_HOME at the repo
+VAPT-Project/
+reports/
+recon/
+scans/
+logs/
+evidence/
+*.legacy.migrated
